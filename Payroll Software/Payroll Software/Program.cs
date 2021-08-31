@@ -63,4 +63,24 @@ namespace Payroll_Software
         public int Allowance { get; private set; }
 
         public Manager(string name) : base(name, managerHourlyRate) { }
+
+        public override void CalculatePay()
+        {
+            base.CalculatePay();
+            Allowance = 0;
+
+            if (HoursWOrked > 160)
+            {
+                TotalPay = BasicPay + Allowance;
+            }
+        }
+
+        public override string ToString()
+        {
+            return "\nNameOfStaff = " + NameOfStaff + "\nmanagerHourlyRate = "
+              + managerHourlyRate + "\nHoursWorked = " + HoursWorked + "\nBasicPay = "
+              + BasicPay + "\nAllowance = " + Allowance + "\n\nTotalPay = " + TotalPay;
+
+        }
+    }
 }
