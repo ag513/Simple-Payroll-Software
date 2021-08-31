@@ -90,5 +90,6 @@ namespace Payroll_Software
         private const float adminHourlyRate = 30;
         public float Overtime { get; private set; }
 
+        public Admin(string name) : base(name, adminHourlyRate) { };
     }
 }
