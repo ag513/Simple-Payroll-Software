@@ -101,5 +101,14 @@ namespace Payroll_Software
                 TotalPay = BasicPay + Overtime;
             }
         }
+
+        public override string ToString()
+        {
+            return "\nNameOfStaff = " + NameOfStaff
+                 + "\nadminHourlyRate = " + adminHourlyRate + "\nHoursWorked = " + HoursWorked
+                 + "\nBasicPay = " + BasicPay + "\nOvertime = " + Overtime
+                 + "\n\nTotalPay = " + TotalPay;
+
+        }
     }
 }
