@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
 
 namespace Payroll_Software
 {
@@ -16,11 +18,11 @@ namespace Payroll_Software
         private int hWorked;
 
         // Auto implemented properties
-        public float TotalPay { get, protected set; }
-        public float BasicPay { get,private set; }
+        public float TotalPay { get; protected set; }
+        public float BasicPay { get; private set; }
         public string NameOfStaff { get; private set; }
 
-        public int HoursWOrked
+        public int HoursWorked
         {
             get
             {
@@ -69,7 +71,7 @@ namespace Payroll_Software
             base.CalculatePay();
             Allowance = 0;
 
-            if (HoursWOrked > 160)
+            if (HoursWorked > 160)
             {
                 TotalPay = BasicPay + Allowance;
             }
@@ -90,14 +92,14 @@ namespace Payroll_Software
         private const float adminHourlyRate = 30;
         public float Overtime { get; private set; }
 
-        public Admin(string name) : base(name, adminHourlyRate) { };
+        public Admin(string name) : base(name, adminHourlyRate) { }
 
         public override void CalculatePay()
         {
             base.CalculatePay();
-            if (HoursWOrked > 160)
+            if (HoursWorked > 160)
             {
-                Overtime = overtimeRate * (HoursWOrked - 160);
+                Overtime = overtimeRate * (HoursWorked - 160);
                 TotalPay = BasicPay + Overtime;
             }
         }
