@@ -16,28 +16,10 @@ namespace Payroll_Software
         private int hWorked;
 
         // Auto implemented properties
-        public float TotalPay { 
-            get 
-            {
-                return TotalPay;
-            }
-            protected set 
-            {
-                TotalPay = value;
-            } 
-        }
-        public float BasicPay
-        {
-            get
-            {
-                return BasicPay;
-            }
-            private set 
-            {
-                BasicPay = value;
-            }
-        }
-        public string NameOfStaff { get; set; }
+        public float TotalPay { get, protected set; }
+        public float BasicPay { get,private set; }
+        public string NameOfStaff { get; private set; }
+
         public float HoursWOrked
         {
             get
@@ -46,7 +28,7 @@ namespace Payroll_Software
             }
             set
             {
-                if (HoursWOrked > 0)
+                if (value > 0)
                     hWorked = value;
                 else
                     hWorked = 0;
