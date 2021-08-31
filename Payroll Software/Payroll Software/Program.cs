@@ -83,4 +83,12 @@ namespace Payroll_Software
 
         }
     }
+
+    class Admin : Staff
+    {
+        private const float overtimeRate = 15.5;
+        private const float adminHourlyRate = 30;
+        public float Overtime { get; private set; }
+
+    }
 }
