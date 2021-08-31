@@ -91,5 +91,15 @@ namespace Payroll_Software
         public float Overtime { get; private set; }
 
         public Admin(string name) : base(name, adminHourlyRate) { };
+
+        public override void CalculatePay()
+        {
+            base.CalculatePay();
+            if (HoursWOrked > 160)
+            {
+                Overtime = overtimeRate * (HoursWOrked - 160);
+                TotalPay = BasicPay + Overtime;
+            }
+        }
     }
 }
