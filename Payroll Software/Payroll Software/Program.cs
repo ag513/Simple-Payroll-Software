@@ -34,4 +34,12 @@ namespace Payroll_Software
                     hWorked = 0;
             }
         }
-}
+
+        public override string ToString()
+        {
+            return "\nNameOfStaff = " + NameOfStaff
+                + "\nhourlyRate = " + hourlyRate + "\nhWorked = " + hWorked
+                + "\nBasicPay = " + BasicPay + "\n\nTotalPay = " + TotalPay;
+
+        }
+    }
