@@ -20,7 +20,7 @@ namespace Payroll_Software
         public float BasicPay { get,private set; }
         public string NameOfStaff { get; private set; }
 
-        public float HoursWOrked
+        public int HoursWOrked
         {
             get
             {
@@ -35,17 +35,24 @@ namespace Payroll_Software
             }
         }
 
+        public Staff(string name, float rate)
+        {
+            NameOfStaff = name;
+            hourlyRate = rate;
+        }
+
+        public virtual void CalculatePay()
+        {
+            Console.WriteLine("Calculating pay...");
+            BasicPay = hWorked * hourlyRate;
+            TotalPay = BasicPay;
+        }
+
         public override string ToString()
         {
             return "\nNameOfStaff = " + NameOfStaff
                 + "\nhourlyRate = " + hourlyRate + "\nhWorked = " + hWorked
                 + "\nBasicPay = " + BasicPay + "\n\nTotalPay = " + TotalPay;
 
-        }
-
-        public Staff(string name, float rate)
-        {
-            NameOfStaff = name;
-            hourlyRate = rate;
         }
     }
