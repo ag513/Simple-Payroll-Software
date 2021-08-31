@@ -42,4 +42,10 @@ namespace Payroll_Software
                 + "\nBasicPay = " + BasicPay + "\n\nTotalPay = " + TotalPay;
 
         }
+
+        public Staff(string name, float rate)
+        {
+            NameOfStaff = name;
+            hourlyRate = rate;
+        }
     }
