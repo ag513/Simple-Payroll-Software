@@ -8,7 +8,44 @@ namespace Payroll_Software
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            List<Staff> myStaff = new List<Staff>();
+            FileReader fr = new FileReader();
+            int month = 0, year = 0;
+
+            while (year == 0)
+            {
+                Console.Write("\nPlease enter the year: ");
+
+                try
+                {
+                    year = Convert.ToInt32(Console.ReadLine());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message + " Please try again.");
+                }
+            }
+
+            while (month == 0)
+            {
+                Console.Write("\nPlease enter the month: ");
+
+                try
+                {
+                    month = Convert.ToInt32(Console.ReadLine());
+
+                    if (month < 1 || month > 12)
+                    {
+                        Console.WriteLine("Month must be from 1 to 12. Please try again.");
+                        month = 0;
+                    }
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message + " Please try again.");
+                }
+            }
+
         }
     }
 
@@ -88,7 +125,7 @@ namespace Payroll_Software
 
     class Admin : Staff
     {
-        private const float overtimeRate = 15.5;
+        private const float overtimeRate = 15;
         private const float adminHourlyRate = 30;
         public float Overtime { get; private set; }
 
