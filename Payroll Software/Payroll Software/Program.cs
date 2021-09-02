@@ -45,6 +45,23 @@ namespace Payroll_Software
                     Console.WriteLine(e.Message + " Please try again.");
                 }
             }
+            myStaff = fr.ReadFile();
+
+            for (int i = 0; i < myStaff.Count; i++)
+            {
+                try
+                {
+                    Console.Write("\nEnter hours worked for {0}: ", myStaff[i].NameOfStaff);
+                    myStaff[i].HoursWorked = Convert.ToInt32(Console.ReadLine());
+                    myStaff[i].CalculatePay();
+                    Console.WriteLine(myStaff[i].ToString());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    i--;
+                }
+            }
 
         }
     }
