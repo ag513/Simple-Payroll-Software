@@ -22,3 +22,18 @@ and creates a list of Staff objects based on the contents in the .txt file.
 The PaySlip class generates the pay slip of each employee in the company.
 
 The Program class contains the Main() method.
+
+
+**Generated Output - Payslip**
+
+PAYSLIP FOR SEP 2021
+====================
+Name of Staff: Carol
+Hours Worked: 34
+
+Basic Pay: £1,020.00
+Overtime: £0.00
+
+====================
+Total Pay: £1,020.00
+====================
